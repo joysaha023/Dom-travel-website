@@ -44,13 +44,26 @@ for(const btn of addBtn){
         const total = parseInt(totalPrice) + price;
         document.getElementById('total-cost').innerText = total;
         
+
     })
 }
 
-
-
-
-
+function grandTotal(c){
+    const convertTotal = getValue('total-cost');
+    
+    if(c == 'bus'){
+        setInnerText('grand-total', convertTotal + 100);
+    }
+    else if(c == 'train'){
+        setInnerText('grand-total', convertTotal - 200);
+    }
+    else if(c == 'flight'){
+        setInnerText('grand-total', convertTotal + 500);
+    }
+    else{
+        setInnerText('grand-total', convertTotal);
+    }
+}
 
 
 function getValue(id){
